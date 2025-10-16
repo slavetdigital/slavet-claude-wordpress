@@ -1,23 +1,32 @@
 {
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/orchestrate.sh"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/session-start.sh"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
         "hooks": [
           {
             "type": "command",
-            "debounceMs": 1200,
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/on-change-audit.sh"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
+            "debounceMs": 800,
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/orchestrate.sh"
+          },
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/session-start.sh"
+            "debounceMs": 1200,
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/on-change-audit.sh"
           }
         ]
       }

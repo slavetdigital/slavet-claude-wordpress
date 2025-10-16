@@ -40,6 +40,10 @@
     {
       "id": "wp-plugin-developer",
       "path": "./agents/plugin-developer.md"
+    },
+    {
+      "id": "wp-frontend-collab",
+      "path": "./agents/frontend-collab.md"
     }
   ],
   "hooks": "./hooks/hooks.json",
