@@ -1,5 +1,5 @@
 {
-  "name": "Slavet Marketplace",
+  "name": "slavet-marketplace",
   "owner": {
     "name": "Slav\u0113t Digital",
     "url": "https://www.slavetdigital.com"
@@ -8,7 +8,7 @@
     {
       "name": "slavet-claude-wordpress",
       "description": "Evidence-based WordPress FSE auditor for WP.org compliance (Theme + Plugin).",
-      "source": "."
+      "source": "./"
     }
   ]
 }
