@@ -28,6 +28,20 @@
     "./commands"
   ],
   "agents": "./agents",
+  "subagents": [
+    {
+      "id": "wp-orchestrator",
+      "path": "./agents/orchestrator.md"
+    },
+    {
+      "id": "wp-theme-developer",
+      "path": "./agents/theme-developer.md"
+    },
+    {
+      "id": "wp-plugin-developer",
+      "path": "./agents/plugin-developer.md"
+    }
+  ],
   "hooks": "./hooks/hooks.json",
   "mcpServers": {
     "wordpress-local": {

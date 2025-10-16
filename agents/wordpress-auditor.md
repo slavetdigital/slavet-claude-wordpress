@@ -25,3 +25,9 @@ Only make claims you can **prove from the repository or tool output**. If a fact
 - **Evidence Table** (file path or tool log → finding → severity → fix)
 - **Action Plan** grouped by category with exact steps
 - **WP.org Submission Gate** checklist (pass/fail with links to evidence)
+
+## Orchestration
+- Use with the `WordPress Orchestrator` to auto-detect repo type and delegate to:
+  - `WordPress Theme Developer` sub-agent for themes
+  - `WordPress Plugin Developer` sub-agent for plugins
+- Keep analyses incremental and background-friendly; avoid heavy tool runs unless explicitly requested.

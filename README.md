@@ -20,6 +20,16 @@ A **lightweight**, **evidence-based** Claude Code plugin that audits and assists
 - `/wp improvement-report` — delta vs **Theme Improvement Plan.md** with exact tasks
 - `/wp plan-status` — writes `docs/STATUS.md` summarizing Done / Partial / Missing
 
+## Sub-agents and orchestration
+
+- **Orchestrator**: detects if the repo is a theme or plugin (offline heuristics) and delegates to the appropriate sub-agent without increasing credit usage.
+- **Theme Developer sub-agent**: generates an enterprise-grade delta report for themes with precise fixes, mapped to your plan.
+- **Plugin Developer sub-agent**: generates an enterprise-grade delta report for plugins with precise fixes, mapped to your plan.
+
+Behavior:
+- Prefers existing reports from `./.reports/` and avoids heavy tool runs unless asked.
+- Works in background-friendly increments and returns concise, evidence-based artifacts (tables, diffs, checklists).
+
 ## Hooks
 - Debounced `PostToolUse` message reminding to re-run audit after file writes
 - `SessionStart` sets context-thrifty posture; `PreCompact` stores a session note
@@ -34,6 +44,11 @@ Enable in `.claude-plugin/plugin.json` (`enabled: true`) to wrap local tools via
 - Commands avoid long summaries; they reference **paths & logs**
 - Prefer **file diffs** and **short tables** over verbose narratives
 - Stop if evidence is missing; ask for permission before large scans
+
+## Using sub-agents effectively
+- The orchestrator runs minimal, offline detection and delegates; it does not perform heavy work itself.
+- Sub-agents prefer existing reports and generate concise deltas and PR checklists.
+- To keep credits low, request specific outputs (e.g., "delta for accessibility" or "PHPCS violations only").
 
 ## Compliance references
 - Claude Code plugin schema & directories (manifest, commands, agents, hooks)
