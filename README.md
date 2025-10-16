@@ -20,6 +20,7 @@ A **lightweight**, **evidence-based** Claude Code plugin that audits and assists
 - `/wp improvement-report` — delta vs **Theme Improvement Plan.md** with exact tasks
 - `/wp plan-status` — writes `docs/STATUS.md` summarizing Done / Partial / Missing
 - `/wp orchestrate` — manual trigger for detection/state update (background-friendly)
+- `/wp sanity-check` — validate plugin wiring, hooks, MCP server, and state keys
 
 ## Sub-agents and orchestration
 
@@ -53,11 +54,6 @@ Enable in `.claude-plugin/plugin.json` (`enabled: true`) to wrap local tools via
 - Sub-agents prefer existing reports and generate concise deltas and PR checklists.
 - To keep credits low, request specific outputs (e.g., "delta for accessibility" or "PHPCS violations only").
 - Frontend collaboration uses small structured exchanges; avoid repeated large requests by caching token maps locally.
-
-## Using sub-agents effectively
-- The orchestrator runs minimal, offline detection and delegates; it does not perform heavy work itself.
-- Sub-agents prefer existing reports and generate concise deltas and PR checklists.
-- To keep credits low, request specific outputs (e.g., "delta for accessibility" or "PHPCS violations only").
 
 ## Compliance references
 - Claude Code plugin schema & directories (manifest, commands, agents, hooks)
@@ -94,7 +90,6 @@ Enable in `.claude-plugin/plugin.json` and use the naive server at `servers/wp-m
 - `wp theme validate`
 - `theme-check --format json`
 - `phpcs --report=json`
-```
 
 ---
 
