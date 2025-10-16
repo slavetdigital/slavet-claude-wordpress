@@ -1,0 +1,33 @@
+{
+  "id": "slavet-claude-wordpress",
+  "version": "1.1.0",
+  "displayName": "Slavet WordPress Auditor",
+  "summary": "Evidence-based auditor for WordPress FSE themes. WP.org compliance without bloat.",
+  "description": "Runs fast audits, maps results to your Theme Improvement Plan, and produces non-hallucinatory reports. Optional MCP for wp-cli/theme-check/phpcs.",
+  "publisher": {
+    "name": "Slav\u0113t Digital",
+    "contact": "hello@slavetdigital.com"
+  },
+  "categories": [
+    "WordPress",
+    "Frontend",
+    "Accessibility",
+    "Security",
+    "CI/CD"
+  ],
+  "homepage": "https://github.com/slavetdigital/slavet-claude-wordpress",
+  "repository": "https://github.com/slavetdigital/slavet-claude-wordpress",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "fse",
+    "wpcs",
+    "theme-check",
+    "a11y",
+    "lighthouse",
+    "interactivity-api",
+    "tailwind",
+    "vite"
+  ]
+}
